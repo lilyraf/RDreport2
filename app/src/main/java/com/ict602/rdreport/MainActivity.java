@@ -30,10 +30,11 @@ public class MainActivity extends AppCompatActivity {
         // Check for existing Google Sign In account, if the user is already signed in
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-        updateUI(account);
+
         if(account == null){
             //null sign in
-            Toast.makeText(this,"Please sign in")
+            Toast.makeText(this,"Please sign in", Toast.LENGTH_SHORT).show();
+
         } else {
             // user signed in already
         }
