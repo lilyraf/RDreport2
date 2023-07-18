@@ -48,7 +48,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             // user signed in already
             Toast.makeText(this," already", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, CommentActivity.class);
+            intent.putExtra("Name", account.getDisplayName());
+            intent.putExtra("Email",account.getEmail());
 
+            startActivity(intent);
         }
     }
 
@@ -79,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Open new Activity
             Toast.makeText(this,"User already signed in",Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(this, DashboardActivity.class);
+            Intent intent = new Intent(this, CommentActivity.class);
             intent.putExtra("Name", account.getDisplayName());
             intent.putExtra("Email",account.getEmail());
             startActivity(intent);
