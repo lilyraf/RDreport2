@@ -78,6 +78,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // Signed in successfully, show authenticated UI.
             // Open new Activity
             Toast.makeText(this,"User already signed in",Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this, DashboardActivity.class);
+            intent.putExtra("Name", account.getDisplayName());
+            intent.putExtra("Email",account.getEmail());
+            startActivity(intent);
+
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
