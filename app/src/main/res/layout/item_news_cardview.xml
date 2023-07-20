@@ -9,6 +9,12 @@
     android:elevation="4dp"
     android:padding="16dp">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="125dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="358dp"
         android:layout_height="186dp"
