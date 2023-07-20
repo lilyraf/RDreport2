@@ -96,6 +96,8 @@ public class AboutActivity extends AppCompatActivity {
                     AboutActivity.this.startActivity(intent);
                 } else if (item.getItemId() == R.id.menu_sign_out) {
                     signOut();
+                    Intent intent = new Intent(AboutActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
 
 
@@ -115,7 +117,7 @@ public class AboutActivity extends AppCompatActivity {
     }
 
     public void openUrl(View view) {
-        String url = "https://github.com/lilyraf/Assignment1"; // GitHub URL
+        String url = "https://github.com/lilyraf/RDreport2"; // GitHub URL
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse(url));

@@ -13,31 +13,61 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".CommentActivity">
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="wrap_content"
+
+        <TextView
+            android:id="@+id/SubmitReport"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Submit"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            android:padding="5dp"
+            android:text="Submit Report"
+            android:textAlignment="center"
+            android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.68" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingLeft="5dp"
+            android:text="Submit"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleReport"
+            app:layout_constraintVertical_bias="0.435" />
+
+        <TextView
+            android:id="@+id/tvNameReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            app:layout_constraintBottom_toTopOf="@+id/etName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SubmitReport" />
 
         <EditText
             android:id="@+id/etName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
 
+            android:layout_marginTop="48dp"
+
+            android:ems="10"
             android:hint="Name"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:minWidth="300dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias=".5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.247" />
+            app:layout_constraintTop_toBottomOf="@+id/SubmitReport" />
 
         <ImageView
             android:id="@+id/etURL"
@@ -51,36 +81,92 @@
             app:layout_constraintTop_toBottomOf="@+id/btnSubmit"
             app:layout_constraintVertical_bias="0.317" />
 
+        <TextView
+            android:id="@+id/tvEmailReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            app:layout_constraintBottom_toTopOf="@+id/etEmail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etName"
+            app:layout_constraintVertical_bias="1.0" />
+
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
 
+            android:layout_marginTop="28dp"
+            android:ems="10"
             android:hint="Email"
+
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:minWidth="300dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias=".5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.374" />
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+
+        <!--
+        <TextView
+            android:id="@+id/tvDescriptionReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etComments"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintWidth="wrap_content" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etComments" />
+             -->
+
+        <TextView
+            android:id="@+id/tvTitleReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Report:"
+            app:layout_constraintBottom_toTopOf="@+id/etComments"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail"
+            app:layout_constraintVertical_bias="1.0" />
 
         <EditText
             android:id="@+id/etComments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:ems="10"
-            android:hint="Comment"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:hint="Report"
+            android:inputType="textMultiLine"
+            android:maxHeight="75dp"
+            android:minWidth="300dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
         <Button
             android:id="@+id/signout"
-            android:layout_width="0dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -89,6 +175,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!-- Navigation drawer -->
     <com.google.android.material.navigation.NavigationView

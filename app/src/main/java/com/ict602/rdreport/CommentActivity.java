@@ -103,6 +103,25 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle the drawer menu toggle
+        if (item.getItemId() == android.R.id.home) {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     // Implement the onClick method from View.OnClickListener interface
     @Override
@@ -200,6 +219,8 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
                     CommentActivity.this.startActivity(intent);
                 } else if (item.getItemId() == R.id.menu_sign_out) {
                     signOut();
+                    Intent intent = new Intent(CommentActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
 
 

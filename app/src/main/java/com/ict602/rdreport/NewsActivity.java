@@ -129,6 +129,8 @@ public class NewsActivity extends AppCompatActivity {
                     NewsActivity.this.startActivity(intent);
                 } else if (item.getItemId() == R.id.menu_sign_out) {
                     signOut();
+                    Intent intent = new Intent(NewsActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
 
                 // Close the drawer when an item is clicked

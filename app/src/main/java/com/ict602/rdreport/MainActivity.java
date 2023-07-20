@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         } else {
             // user signed in already
-            Toast.makeText(this," already", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"User already signed in", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, CommentActivity.class);
             intent.putExtra("Name", account.getDisplayName());
             intent.putExtra("Email",account.getEmail());
@@ -89,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, CommentActivity.class);
             intent.putExtra("Name", account.getDisplayName());
             intent.putExtra("Email",account.getEmail());
+            String profileImageURL = account.getPhotoUrl() != null ? account.getPhotoUrl().toString() : "";
+            intent.putExtra("ProfileIMG", profileImageURL);
             startActivity(intent);
 
         } catch (ApiException e) {
