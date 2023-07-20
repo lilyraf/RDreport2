@@ -3,5 +3,7 @@
     <string name="copyright">Copyright &#169; 2023 Asyraf Salihin</string>
     <string name="about_text">This is an application to estimate the electricity bill. This application is created by Asyraf Salihin bin Zamri 2021315255 RCS2405B ICT602 </string>
     <string name="title_activity_about">AboutActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
 </resources>
