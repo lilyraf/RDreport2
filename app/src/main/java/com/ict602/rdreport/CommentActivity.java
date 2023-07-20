@@ -103,27 +103,6 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.about) {
-            Intent intent = new Intent(this, AboutActivity.class);
-            startActivity(intent);
-            return true;
-        } else {
-            // Handle the navigation drawer toggle
-            if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
-                return true;
-            }
-            return super.onOptionsItemSelected(item);
-        }
-    }
 
     // Implement the onClick method from View.OnClickListener interface
     @Override
@@ -219,7 +198,10 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
                     intent.putExtra("Email", email);
                     intent.putExtra("ProfileIMG", profileImageURL);
                     CommentActivity.this.startActivity(intent);
+                } else if (item.getItemId() == R.id.menu_sign_out) {
+                    signOut();
                 }
+
 
                 // Close the drawer when an item is clicked
                 drawerLayout.closeDrawer(GravityCompat.START);

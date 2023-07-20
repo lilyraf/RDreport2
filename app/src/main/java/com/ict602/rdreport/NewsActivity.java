@@ -27,6 +27,8 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
@@ -125,6 +127,8 @@ public class NewsActivity extends AppCompatActivity {
                     intent.putExtra("Email", email);
                     intent.putExtra("ProfileIMG", profileImageURL);
                     NewsActivity.this.startActivity(intent);
+                } else if (item.getItemId() == R.id.menu_sign_out) {
+                    signOut();
                 }
 
                 // Close the drawer when an item is clicked
@@ -211,4 +215,19 @@ public class NewsActivity extends AppCompatActivity {
         // Add the request to the RequestQueue to initiate the network request
         queue.add(newsRequest);
     }
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // Clear user data and navigate back to MainActivity
+                        Toast.makeText(getApplicationContext(), "Signed out successfully.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(NewsActivity.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+    }
+
 }

@@ -12,5 +12,8 @@
             android:id="@+id/menu_about"
             android:icon="@drawable/ic_launcher_background"
             android:title="About" />
+        <item
+            android:id="@+id/menu_sign_out"
+            android:title="Sign Out" />
     </group>
 </menu>

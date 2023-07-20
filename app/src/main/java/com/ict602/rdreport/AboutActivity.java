@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -18,6 +19,8 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
 public class AboutActivity extends AppCompatActivity {
@@ -91,7 +94,10 @@ public class AboutActivity extends AppCompatActivity {
                     intent.putExtra("Email", email);
                     intent.putExtra("ProfileIMG", profileImageURL);
                     AboutActivity.this.startActivity(intent);
+                } else if (item.getItemId() == R.id.menu_sign_out) {
+                    signOut();
                 }
+
 
                 // Close the drawer when an item is clicked
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -138,5 +144,20 @@ public class AboutActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // Clear user data and navigate back to MainActivity
+                        Toast.makeText(getApplicationContext(), "Signed out successfully.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(AboutActivity.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+    }
+
 }
 
