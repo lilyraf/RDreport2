@@ -2,18 +2,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/menu_news"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/news_icon"
             android:title="News" />
         <item
             android:id="@+id/menu_comment"
-            android:icon="@drawable/ic_launcher_background"
-            android:title="Comment" />
+            android:icon="@drawable/report_icon"
+            android:title="Report" />
         <item
             android:id="@+id/menu_about"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/info_icon"
             android:title="About" />
         <item
             android:id="@+id/menu_sign_out"
-            android:title="Sign Out" />
+            android:icon="@drawable/sign_out2"
+            android:title="Sign Out"
+            android:textSize="20dp"
+            />
     </group>
 </menu>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#A98EDA</color> <!-- Replace #FF0000 with your desired red color code -->
-    <color name="colorSecondary">#F1ECF8</color> <!-- Replace #FF0000 with your desired red color code -->
+    <color name="colorPrimary">#8BC34A</color> <!-- Replace #FF0000 with your desired red color code -->
+    <color name="colorSecondary">#F0E6FF</color> <!-- Replace #FF0000 with your desired red color code -->
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF1414</color>
 </resources>

@@ -74,8 +74,6 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
 
         button.setOnClickListener(this);
 
-        Button signout = findViewById(R.id.signout);
-        signout.setOnClickListener(this);
 
         // Find the NavigationView
         navigationView = findViewById(R.id.navigation_view);
@@ -128,8 +126,6 @@ public class CommentActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         if (v.getId() == R.id.btnSubmit) {
             makeRequest();
-        } else if (v.getId() == R.id.signout) {
-            signOut();
         }
     }
 
